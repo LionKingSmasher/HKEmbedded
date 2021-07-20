@@ -13,4 +13,4 @@ Well, That's Hard Question... Because I want to learn everything about stm32 lib
 - stm32f103: 2021.07.20 ~ now
 
 ## More Questions or Help or etc.
-- [Lösung의 메일](mailto:shk052353@gmail.com)
+- [Lösung's mail](mailto:shk052353@gmail.com)
