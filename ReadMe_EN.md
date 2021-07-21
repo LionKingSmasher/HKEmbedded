@@ -4,7 +4,7 @@
 My Handmade stm32 library!!!
 
 ## Why do you make it?
-Well, That's Hard Question... Because I want to learn everything about stm32 library, such as how to perform functions in library or why he/she make it
+Well, That's Hard Question... Because I want to learn everything about stm32 library, such as how to perform functions in library or why they make like it
 
 ## Developer
 - Lösung(Shin Hyun Kyu)
