@@ -18,6 +18,6 @@ typedef struct __SCB__ {
 	uint32_t BFAR;  // 0x34
 } __SCB_TYPE__;
 
-#define SCB ((IO(__SCB_TYPE__)*)0xe000e008) // SCB
+#define SCB ((IO(__SCB_TYPE__)*)(__CORE_PERIPHERAL_BASE_ADDRESS__+0xd00)) // SCB register
 
 void stm32f103_Init(void);
