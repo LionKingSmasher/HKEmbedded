@@ -5,11 +5,7 @@ void _exit(int __attribute__((unused)) code){
 	while(1);
 }
 
-static void DefaultFunction(void){
-	_exit(0);
-}
-
-void __attribute__((weak, alias("DefaultFunction"))) main(int argc, char** argv);
+int __attribute__((weak)) main(int argc, char** argv);
 
 void __attribute__((weak)) _start(void){
 	stm32f103_Init();
