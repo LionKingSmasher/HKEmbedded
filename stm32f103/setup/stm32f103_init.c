@@ -4,8 +4,8 @@
 
 #include "stm32f103_init.h"
 
-extern uint32_t __VEC_START__; // 0x80004000
+extern unsigned long __VEC_START__; // 0x80000000
 
-void __attribute__((always_inline)) stm32f103_Init(void){
-	SCB->VTOR = __VEC_START__ << 9;
+inline void __attribute__((always_inline)) stm32f103_Init(void){
+	SCB->VTOR = (uint32_t)(&__VEC_START__);
 }

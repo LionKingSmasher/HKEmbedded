@@ -1,5 +1,4 @@
 #include "../Macro/stm32f103_macro.h"
-#include <stdint.h>
 
 typedef struct __SCB__ {
 	UIO(32) CPUID; // 0x00

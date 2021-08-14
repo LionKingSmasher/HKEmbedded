@@ -8,6 +8,7 @@
 
 #include "Macro/stm32f103_macro.h"
 #include "Memory/stm32f103_memory.h"
+#include "setup/stm32f103_init.h"
 
 // Important Function!
 // int main(int argc, char** argv); // main Function
