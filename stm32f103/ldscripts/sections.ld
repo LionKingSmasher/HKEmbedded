@@ -12,4 +12,10 @@ SECTIONS
 
 		*(.after_vectors .after_vectors.*)
 	} > BOOTLOADER
+
+	.text : ALIGN(4)
+	{
+		*(.text .text.*)
+		*(.rodata .rodata.* .constdata .constdata.*)
+	} > APP
 }

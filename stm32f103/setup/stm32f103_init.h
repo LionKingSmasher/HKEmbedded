@@ -20,3 +20,4 @@ typedef struct __SCB__ {
 #define SCB ((__SCB_TYPE__*)(__CORE_PERIPHERAL_BASE_ADDRESS__+0xd00)) // SCB register
 
 void stm32f103_Init(void);
+void stm32f103_Init_args(int* __argc, char*** __argv);
