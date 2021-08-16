@@ -1,3 +1,7 @@
+__stack = ORIGIN(RAM) + LENGTH(RAM);
+
+__entry_stack = __stack;
+
 ENTRY(_start)
 
 SECTIONS

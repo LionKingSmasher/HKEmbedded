@@ -5,11 +5,13 @@ CFLAGS=-mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-s
 
 C_SOURCES += \
 ./setup/stm32f103_init.c \
-./setup/stm32f103_startup.c
+./setup/stm32f103_startup.c \
+./setup/stm32f103_handler.c
 
 OBJS += \
 ./setup/stm32f103_init.o \
-./setup/stm32f103_startup.o
+./setup/stm32f103_startup.o \
+./setup/stm32f103_handler.o
 
 test.hex: test.elf
 	$(OBJCOPY) -O ihex $^ $@

@@ -23,4 +23,5 @@ void __attribute__((section(".after_vectors"), weak, noreturn)) _start(void){
 	int ret = main(argc, argv);
 
 	_exit(ret);
+	while(1);
 }
