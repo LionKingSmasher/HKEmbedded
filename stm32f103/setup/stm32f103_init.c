@@ -4,8 +4,6 @@
 
 #include "stm32f103_init.h"
 
-#define NULL ((void*)0)
-
 extern unsigned long __VEC_START__; // 0x80000000
 
 inline void __attribute__((always_inline)) stm32f103_Init(void){

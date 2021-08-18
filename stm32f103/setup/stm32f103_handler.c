@@ -8,8 +8,15 @@ void __attribute__((section(".after_vectors"))) NoneHandler(void){
 	while(1);
 }
 
-void __attribute__((section(".after_vectors"), noreturn)) ResetHandler(void){
-	_start();
+void __attribute__((section(".after_vectors"), naked)) ResetHandler(void){
+	asm volatile(
+		"ldr r0, =_start \n"
+		"add r0, 2 \n"
+		"bx r0"
+		:
+		:
+		:
+	);
 }
 
 void __attribute__((alias("NoneHandler"), weak)) NMIHandler(void);

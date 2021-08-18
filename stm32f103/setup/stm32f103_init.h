@@ -1,5 +1,7 @@
 #include "../Macro/stm32f103_macro.h"
 
+#define NULL ((void*)0)
+
 typedef struct __SCB__ {
 	UIO(32) CPUID; // 0x00
 	UIO(32) ICSR;  // 0x04
@@ -20,4 +22,3 @@ typedef struct __SCB__ {
 #define SCB ((__SCB_TYPE__*)(__CORE_PERIPHERAL_BASE_ADDRESS__+0xd00)) // SCB register
 
 void stm32f103_Init(void);
-void stm32f103_Init_args(int* __argc, char*** __argv);
