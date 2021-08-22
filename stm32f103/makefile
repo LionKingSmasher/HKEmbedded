@@ -5,8 +5,11 @@ CFLAGS=-mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-s
 
 C_SOURCES += \
 ./setup/stm32f103_init.c \
-./setup/stm32f103_startup.c \
-./setup/stm32f103_handler.c
+./setup/stm32f103_startup.c
+# ./setup/stm32f103_handler.c
+
+ASM_SOURCES += \
+./setup/stm32f103_resethandler.s
 
 OBJS += \
 ./setup/stm32f103_init.o \
@@ -21,6 +24,10 @@ test.elf: main.c $(OBJS)
 
 setup/%.o: setup/%.c
 	$(CC) -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_ITM -DSTM32F103x6 -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -std=gnu11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -c -o $@ $<
+
+setup/%.o: setup/%.s
+	$(CC) -mcpu=cortex-m3 -mthumb -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_ITM -DSTM32F103x6 -DUSE_HAL_DRIVER -DHSE_VALUE=8000000 -std=gnu11 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -c -o $@ $<
+# 	OBJS += ./setup/stm32f103_handler.o
 
 clear:
 	rm test.elf test.hex setup/*.o setup/*.d

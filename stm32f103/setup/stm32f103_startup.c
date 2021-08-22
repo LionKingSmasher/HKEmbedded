@@ -18,7 +18,7 @@ void __attribute__((section(".after_vectors"), weak, noreturn)) _start(void){
 
 	// ================= stm32f103 Init section =================
 	stm32f103_Init();
-	//stm32f103_Init_args(&argc, &argv);
+	stm32f103_Init_args(&argc, &argv);
 	// ==========================================================
 
 	int ret = main(argc, argv);
