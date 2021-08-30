@@ -14,10 +14,11 @@ void _exit(int __attribute__((unused)) code){
 }
 
 void __attribute__((section(".after_vectors"), weak, noreturn)) _start(void){
-	int argc = 1; char** argv = {"", NULL};
 
 	// ================= stm32f103 Init section =================
 	stm32f103_Init();
+
+	int argc; char** argv;
 	stm32f103_Init_args(&argc, &argv);
 	// ==========================================================
 
