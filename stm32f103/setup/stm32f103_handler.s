@@ -83,7 +83,7 @@ __isr_vectors:
 	.type ResetHandler, %function
 ResetHandler:
 	ldr r0, =_start
-	add r0, #2
+	// add r0, #2
 	bx r0
 	.size ResetHandler, . - ResetHandler
 
